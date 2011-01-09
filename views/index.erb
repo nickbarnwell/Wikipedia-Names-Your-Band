@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+    <head>
+		<title>Wikipedia Names Your Band</title>
+		<link rel="stylesheet" type="text/css" href="/style.css" />
+		<!—Mobile -->
+		<link rel="stylesheet" type="text/css" href="mobile.css" media="screen and (max-device-width: 480px)" />
+		<!--[if IEMobile 7]>
+		<link rel="stylesheet" type="text/css" href="mobile.css" media="screen"  />
+		<![endif]-->
+		<link rel="shortcut icon" href="/favicon.png" type="image/png">
+    </head>
+    <body>
+		<div>
+				<p class="text">Band Name: <%= @bname %></p>
+				<p class="text">Album Title: <%= @title %></p>
+		</div>
+		<div id="imgcontainer">
+			<%= @photo %>
+		</div>
+		<div id="refresh"><a href="/">Try another (please be patient)</a></div>	
+    </body>
+</html>
