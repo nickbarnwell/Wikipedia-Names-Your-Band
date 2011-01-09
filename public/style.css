@@ -1,10 +1,20 @@
 body, html {
 	background: #000;
     font-family: Helvetica, Arial, Sans;
+	width: 800px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+#main {
+	position: relative;
+}
+
+#main p {
+	line-height: 1.0
 }
 
 .text {
-    height: 20px;
     color: #fff;
     font-size: 64px;
     font-weight: bold;
@@ -19,7 +29,10 @@ img {
 }
 
 #imgcontainer {
-	height: 200;
+	top: -30px;
+	position: relative;
+	padding: -5px;
+	height: auto;
 	width: 256px;
 	margin-left: auto;
 	margin-right: auto;
