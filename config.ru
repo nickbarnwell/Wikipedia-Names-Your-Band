@@ -1,2 +1,2 @@
-require './dsbapi'
+require './wikipedanyb'
 run Sinatra::Application
