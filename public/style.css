@@ -1,7 +1,7 @@
 
 body {
-  background: #eee;
-  color: #222;
+  background: #000;
+  color: #222222;
   font: 14px/1.5 Calibri, 'Lucida Sans', 'Lucida Grande', 'Lucida Sans Unicode', Verdana, sans-serif;
   padding: 20px;
 }
@@ -13,6 +13,7 @@ body {
 }
 
 h1 {
+  color: #eee;
   font: 72px/1 'Sniglet', 'Helvetica Neue', Arial, Helvetica, sans-serif;
   line-height: 1;
   font-weight: bold;
@@ -36,12 +37,12 @@ a {
 
 #fade_left {
   left: 0;
-  background: url('fade_left.png');
+  background: url('fadeb_left.png');
 }
 
 #fade_right {
   right: 0;
-  background: url('fade_right.png');
+  background: url('fadeb_right.png');
 }
 
 .info {
@@ -92,6 +93,7 @@ li.user {
 }
 
 #footer {
+  color: #fff;
   margin-top: 20px;
   font-size: 11px;
   text-align: center;
