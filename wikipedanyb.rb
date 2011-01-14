@@ -2,9 +2,7 @@
 require 'sinatra'
 require 'mechanize'
 require 'rubygems'
-require 'erb'
 require 'haml'
-
 
 def fetch_results(num)
 	@agent ||= Mechanize.new
@@ -43,8 +41,18 @@ def fetch_results(num)
 end
 
 get '/' do
-	@results = fetch_results(5)
+	@results = fetch_results(2)
 	haml(:index)
+end
+
+get '/results' do
+	
+	if params[:num]
+		@results = fetch_results(Integer(params[:num]))
+	else
+		@results = fetch_results(1)
+	end
+	haml(:element, :layout => false)
 end
 
 not_found do

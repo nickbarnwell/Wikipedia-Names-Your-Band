@@ -1,0 +1,8 @@
+- @results.each do |r|
+	%li.result
+		%a{:href => r['url']}
+			%img.photo{:src => r['photo']}
+		.info			
+			%ul.details
+				%li.user= r['bandname']
+				%li.text= r['albumtitle']
