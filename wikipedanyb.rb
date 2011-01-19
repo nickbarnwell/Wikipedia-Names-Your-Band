@@ -10,31 +10,33 @@ def fetch_results(num)
 	results = []
 	(1..num).each do
 		page = @agent.get('http://en.wikipedia.org/wiki/Special:Random')
-		bandname =  page.title.split('-')[0]
+		title =  page.title.split('-')[0]
 		page = @agent.get('http://www.quotationspage.com/random.php3')
 
-		doc = page.parser.xpath('//dt[@class="quote"]/a')
-
-		link = doc.last
+		#doc = page.parser.xpath('//dt[@class="quote"]/a')
+		#link = doc.last
+		
+		link = page.parser.xpath('//dt[@class="quote"]/a').last
 		t = link.content.split(' ')
-		albumtitle = t.slice(t.length-5,t.length).join(' ')
+		text = t.slice(t.length-5,t.length).join(' ')
 
 		page = @agent.get('http://www.flickr.com/explore/interesting/7days/')
 		
-		doc = page.parser.xpath('//span[@class="photo_container pc_m"]/a')
-
-		photo = doc[2]
+		#doc = page.parser.xpath('//span[@class="photo_container pc_m"]/a')
+		#photo = doc[2]
+		photo = page.parser.xpath('//span[@class="photo_container pc_m"]/a')[2]
 		url = 'http://flickr.com'+photo.attribute('href').value
 		page = @agent.get(url)
 		
-		doc = page.parser.xpath('//img[@alt="photo"]')
-		photo = doc[0].attribute('src').value
+		photo = page.parser.xpath('//img[@alt="photo"]')[0].attribute('src').value
+		#doc = page.parser.xpath('//img[@alt="photo"]')
+		#photo = doc[0].attribute('src').value
 		
 		results << {
 			'url' => url,
 			'photo' => photo,
-			'bandname' => bandname,
-			'albumtitle' => albumtitle
+			'title' => title,
+			'text' => text
 			}
 	end
 	results
@@ -42,7 +44,7 @@ end
 
 get '/' do
 	@results = fetch_results(2)
-	haml(:index)
+	haml(:element)
 end
 
 get '/results' do
