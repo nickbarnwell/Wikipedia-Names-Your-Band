@@ -76,18 +76,7 @@ img.photo {
   border: 1px solid #ccc;
 }
 
-img.avatar {
-  width: 46px;
-  height: 46px;
-  float: left;
-  margin-right: 10px;
-  border-radius: 5px;
-  -moz-border-radius: 5px;
-  -webkit-border-radius: 5px;
-  border: 1px solid #ccc;
-}
-
-li.user {
+li.title {
   font-weight: bold;
   margin-bottom: 5px;
 }
